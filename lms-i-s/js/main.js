@@ -1,6 +1,4 @@
-// ============================
-// Función para cargar header/footer
-// ============================
+// Cargar header y footer
 async function loadInclude(id, file) {
     try {
         const res = await fetch(file);
@@ -17,9 +15,6 @@ async function loadInclude(id, file) {
     }
 }
 
-// ============================
-// Inicializar menú hamburguesa y scroll suave
-// ============================
 function initMenu() {
     const toggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
@@ -35,15 +30,15 @@ function initMenu() {
             if (href.startsWith("#")) {
                 const target = document.querySelector(href);
                 if (target) target.scrollIntoView({ behavior: "smooth" });
-            } else { window.location.href = href; }
+            } else {
+                window.location.href = href;
+            }
             if (navbar && navbar.classList.contains("active")) navbar.classList.remove("active");
         });
     });
 }
 
-// ============================
 // Animaciones al hacer scroll
-// ============================
 function animateOnScroll() {
     document.querySelectorAll(".animate-up").forEach(el => {
         const elementTop = el.getBoundingClientRect().top;
@@ -51,13 +46,9 @@ function animateOnScroll() {
     });
 }
 
-// ============================
-// Eventos globales
-// ============================
 window.addEventListener("scroll", animateOnScroll);
 window.addEventListener("load", () => {
     animateOnScroll();
     loadInclude("header", "includes/header.html");
     loadInclude("footer", "includes/footer.html");
 });
-

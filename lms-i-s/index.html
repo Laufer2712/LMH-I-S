@@ -27,10 +27,7 @@
     <section id="vision" class="vision section bg-light animate-up">
       <div class="container">
         <h2>📍 Visión</h2>
-        <p>
-          Ser el socio tecnológico ideal para emprendedores visionarios...
-          [texto completo]
-        </p>
+        <p>Ser el socio tecnológico ideal para emprendedores visionarios...</p>
       </div>
     </section>
 
@@ -40,7 +37,7 @@
         <h2>📍 Misión</h2>
         <p>
           Escuchar las ideas de nuestros clientes y utilizar nuestra
-          experiencia... [texto completo]
+          experiencia...
         </p>
       </div>
     </section>
@@ -74,13 +71,10 @@
     <section id="contact" class="contact section animate-up">
       <div class="container">
         <h2>📩 Contáctanos</h2>
-        <form
-          class="contact-form"
-          name="contacto-LMH"
-          method="POST"
-          data-netlify="true"
-          id="contactForm"
-        >
+        <form name="contacto-LMH" class="contact-form">
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu correo" required />
+          <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
           <button type="submit" class="btn-primary">Enviar</button>
         </form>
       </div>
