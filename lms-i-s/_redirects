@@ -1,4 +1,0 @@
-/contacto.html /contacto/ 200
-/servicios.html /servicios/ 200
-# Regla para mostrar la página de error 404 personalizada si no se encuentra nada
-/* /404.html 404
