@@ -67,7 +67,7 @@
           };
 
           try {
-            const res = await fetch("/.netlify/functions/send-email", {
+            const res = await fetch("contacto.php", {
               method: "POST",
               body: JSON.stringify(formData),
             });
