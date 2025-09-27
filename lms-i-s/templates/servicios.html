@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios - LMH I&S</title>
-    <link rel="stylesheet" href="css/header-footer.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header-footer.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'includes/header.html' %}
 
     <section id="services" class="services section animate-up">
       <div class="container">
@@ -39,6 +45,6 @@
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'includes/footer.html' %}
   </body>
 </html>
