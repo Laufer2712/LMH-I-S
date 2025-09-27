@@ -182,6 +182,15 @@ p {
   width: auto;
 }
 
+/* Logo text */
+.main-header .logo .logo-text {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e5039;
+  transition: opacity 0.3s ease;
+}
+
 /* Navbar */
 .navbar ul {
   list-style: none;
