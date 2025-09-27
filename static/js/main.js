@@ -10,25 +10,31 @@ function animateOnScroll() {
 function initMenu() {
     const toggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
+    const overlay = document.querySelector(".overlay");
 
-    // Si no existen los elementos, no se ejecuta
-    if (!toggle || !navbar) return;
+    if (!toggle || !navbar || !overlay) return;
 
-    // Evento para abrir/cerrar menú
     toggle.addEventListener("click", () => {
         navbar.classList.toggle("active");
-        toggle.classList.toggle("active"); // para animar el botón si quieres
+        overlay.classList.toggle("active");
+        toggle.classList.toggle("active");
     });
 
-    // Cierra el menú al hacer clic en un enlace
-    const links = navbar.querySelectorAll("a");
-    links.forEach(link => {
+    overlay.addEventListener("click", () => {
+        navbar.classList.remove("active");
+        overlay.classList.remove("active");
+        toggle.classList.remove("active");
+    });
+
+    navbar.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
             navbar.classList.remove("active");
+            overlay.classList.remove("active");
             toggle.classList.remove("active");
         });
     });
 }
+
 
 
 window.addEventListener("scroll", animateOnScroll);
