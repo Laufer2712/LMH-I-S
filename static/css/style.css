@@ -215,18 +215,18 @@ p {
 }
 
 /* ============================
-   MENU TOGGLE
+   BOTÓN HAMBURGUESA
 =============================== */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
   color: #1e5039;
   background: none;
   border: none;
-  padding: 8px;
+  padding: 10px;
   transition: transform 0.3s ease;
-  z-index: 1001; /* siempre por encima */
+  z-index: 1101;
 }
 
 .menu-toggle:hover {
@@ -234,46 +234,67 @@ p {
 }
 
 /* ============================
+   NAV DESKTOP
+=============================== */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #1b8c68;
+}
+
+/* ============================
    NAV RESPONSIVE
 =============================== */
 @media (max-width: 768px) {
-  nav.navbar {
+  /* Menú oculto al inicio */
+  .navbar {
     position: fixed;
-    top: 60px; /* debajo del header fijo */
-    right: -100%; /* oculto fuera de pantalla */
-    width: 70%; /* ocupa solo parte */
-    max-width: 300px;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
     height: 100vh;
     background: #1e5039;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 40px;
-    gap: 25px;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
+    transition: right 0.3s ease;
+    z-index: 1100;
+    padding: 80px 20px 20px;
   }
 
-  nav.navbar a {
+  /* Lista en columna */
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar ul li a {
     color: #fff;
     font-size: 1.2rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
   }
 
-  nav.navbar a:hover {
-    color: #e1cfff;
-  }
-
-  /* Cuando se activa */
-  nav.navbar.active {
+  /* Menú visible */
+  .navbar.active {
     right: 0;
   }
 
+  /* Mostrar botón hamburguesa */
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }
 
