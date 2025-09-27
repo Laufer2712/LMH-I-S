@@ -1,4 +1,43 @@
-// Cargar header y footer
+// ============================
+// ANIMACIONES AL SCROLL Y PARALAX
+// ============================
+
+// Activar animaciones de aparición
+function animateOnScroll() {
+    const elements = document.querySelectorAll(".animate-up");
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < window.innerHeight * 0.85) {
+            el.classList.add("active");
+        }
+    });
+}
+
+// Paralaje suave para títulos, párrafos y cards
+function parallaxEffect() {
+    const speed = 0.2; // controla la intensidad del efecto
+    const titles = document.querySelectorAll("h2, h3");
+    const paragraphs = document.querySelectorAll("p");
+    const cards = document.querySelectorAll(".service-card");
+
+    const scrollY = window.scrollY;
+
+    titles.forEach(el => {
+        el.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+
+    paragraphs.forEach(el => {
+        el.style.transform = `translateY(${scrollY * speed * 0.6}px)`;
+    });
+
+    cards.forEach(el => {
+        el.style.transform = `translateY(${scrollY * speed * 0.4}px)`;
+    });
+}
+
+// ============================
+// CARGAR HEADER Y FOOTER
+// ============================
 async function loadInclude(id, file) {
     try {
         const res = await fetch(file);
@@ -15,6 +54,9 @@ async function loadInclude(id, file) {
     }
 }
 
+// ============================
+// MENU RESPONSIVE
+// ============================
 function initMenu() {
     const toggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
@@ -38,17 +80,18 @@ function initMenu() {
     });
 }
 
-// Animaciones al hacer scroll
-function animateOnScroll() {
-    document.querySelectorAll(".animate-up").forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < window.innerHeight * 0.85) el.classList.add("active");
-    });
+// ============================
+// EVENTOS DE SCROLL
+// ============================
+function onScroll() {
+    animateOnScroll();
+    parallaxEffect();
 }
 
-window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("scroll", onScroll);
 window.addEventListener("load", () => {
     animateOnScroll();
+    parallaxEffect();
     loadInclude("header", "includes/header.html");
     loadInclude("footer", "includes/footer.html");
 });

@@ -12,24 +12,88 @@ body {
   line-height: 1.7;
   background: #f9f9fb;
   color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   HEADER
+=============================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #fff;
+  color: #1e5039;
+  position: fixed; /* Fijo siempre arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.main-header .logo img.logo-img {
+  height: 42px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(30, 80, 57, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Menu toggle para móviles */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 /* ============================
    SECCIONES
 =============================== */
 .section {
-  padding: 90px 20px;
+  padding: 120px 20px 80px; /* Ajustado para header fijo */
+  position: relative;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  text-align: justify; /* textos justificados */
+  text-align: justify;
   line-height: 1.8;
 }
 
 /* ============================
-   TÍTULOS CON DEGRADADO
+   TITULOS CON DEGRADADO Y PARALAX
 =============================== */
 h2,
 h3 {
@@ -37,19 +101,13 @@ h3 {
   text-align: center;
   margin-bottom: 25px;
   position: relative;
-
-  /* Degradado de tu paleta */
   background: linear-gradient(90deg, #1e5039, #371158);
-
-  /* Compatibilidad */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* estándar (compatibilidad futura) */
+  background-clip: text;
   color: transparent;
-}
-
-h2 {
-  font-size: 2.4rem;
+  transform: translateY(0);
+  transition: transform 0.6s ease-out;
 }
 
 h2::after {
@@ -62,22 +120,23 @@ h2::after {
   border-radius: 2px;
 }
 
-h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-/* Párrafos */
+/* ============================
+   PARÁGRAFOS
+=============================== */
 p {
   font-size: 1.1rem;
   max-width: 900px;
   margin: 0 auto 20px auto;
   color: #444;
   text-align: justify;
+  line-height: 1.8;
+  transform: translateY(0);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 1;
 }
 
 /* ============================
-   SERVICIOS
+   SERVICIOS CON EFECTO FLOTANTE
 =============================== */
 .services-grid {
   display: grid;
@@ -91,17 +150,17 @@ p {
   padding: 30px 25px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   text-align: justify;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-12px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* ============================
-   FORMULARIO CONTACTO
+   FORMULARIO DE CONTACTO
 =============================== */
 .contact-form {
   display: flex;
@@ -150,81 +209,8 @@ p {
 }
 
 /* ============================
-   ANIMACIONES
+   FOOTER
 =============================== */
-.animate-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.animate-up.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================
-   HEADER & FOOTER
-=============================== */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background: #fff;
-  color: #1e5039;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.main-header .logo a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #1e5039;
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-
-.main-header .logo img.logo-img {
-  height: 42px;
-  width: auto;
-}
-
-/* Navbar */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #1e5039;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.navbar a:hover {
-  background: rgba(30, 80, 57, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Menu toggle para móviles */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Footer */
 .footer {
   background: #1e5039;
   color: #fff; /* texto blanco */
@@ -233,6 +219,20 @@ p {
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   border-top: 3px solid #371158;
+}
+
+/* ============================
+   ANIMACIONES AL SCROLL
+=============================== */
+.animate-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================
