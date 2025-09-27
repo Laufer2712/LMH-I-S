@@ -1,5 +1,5 @@
 /* ============================
-   RESET Y BASE
+   RESET
 =============================== */
 * {
   margin: 0;
@@ -12,84 +12,6 @@ body {
   line-height: 1.7;
   background: #f9f9fb;
   color: #333;
-  scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ============================
-   HEADER
-=============================== */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background: #fff;
-  color: #1e5039;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  font-weight: 500;
-}
-
-.main-header .logo a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #1e5039;
-}
-
-.main-header .logo img.logo-img {
-  height: 42px;
-  width: auto;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.navbar a {
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.navbar a:hover {
-  background: rgba(30, 80, 57, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Menu toggle móvil */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #1e5039;
-}
-
-/* ============================
-   FOOTER
-=============================== */
-.footer {
-  background: #1e5039;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  border-top: 3px solid #371158;
 }
 
 /* ============================
@@ -102,23 +24,32 @@ a {
 .container {
   max-width: 1100px;
   margin: auto;
-  text-align: justify;
+  text-align: justify; /* textos justificados */
   line-height: 1.8;
 }
 
-.bg-light {
-  background: #f4f4f4;
-  border-radius: 12px;
-  padding: 30px 20px;
+/* ============================
+   TÍTULOS CON DEGRADADO
+=============================== */
+h2,
+h3 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+
+  /* Degradado de tu paleta */
+  background: linear-gradient(90deg, #1e5039, #371158);
+
+  /* Compatibilidad */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* estándar (compatibilidad futura) */
+  color: transparent;
 }
 
 h2 {
-  color: #1e5039;
-  margin-bottom: 25px;
   font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
 }
 
 h2::after {
@@ -131,11 +62,18 @@ h2::after {
   border-radius: 2px;
 }
 
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+/* Párrafos */
 p {
   font-size: 1.1rem;
   max-width: 900px;
   margin: 0 auto 20px auto;
   color: #444;
+  text-align: justify;
 }
 
 /* ============================
@@ -160,12 +98,6 @@ p {
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.service-card h3 {
-  color: #371158;
-  margin-bottom: 12px;
-  font-size: 1.3rem;
 }
 
 /* ============================
@@ -225,10 +157,82 @@ p {
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .animate-up.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================
+   HEADER & FOOTER
+=============================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #fff;
+  color: #1e5039;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.main-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.main-header .logo img.logo-img {
+  height: 42px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(30, 80, 57, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Menu toggle para móviles */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background: #1e5039;
+  color: #fff; /* texto blanco */
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-top: 3px solid #371158;
 }
 
 /* ============================
@@ -267,45 +271,4 @@ p {
   .main-header .logo .logo-text {
     display: none;
   }
-}
-
-/* ============================
-   DETALLES INNOVADORES
-=============================== */
-/* Agregar sombra sutil a secciones para efecto de profundidad */
-.section {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-  margin-bottom: 40px;
-  padding: 60px 25px;
-}
-
-h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 25px;
-  position: relative;
-
-  /* Degradado */
-  background: linear-gradient(90deg, #1e5039, #371158);
-
-  /* Compatibilidad con distintos navegadores */
-  -webkit-background-clip: text; /* Safari, Chrome, Opera */
-  -webkit-text-fill-color: transparent; /* Safari, Chrome, Opera */
-
-  background-clip: text; /* estándar (actualmente no soportado en Firefox) */
-  color: transparent; /* fallback para navegadores que soporten estándar en el futuro */
-}
-
-/* ::after sigue igual */
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #371158;
-  margin: 12px auto 0;
-  border-radius: 2px;
 }
