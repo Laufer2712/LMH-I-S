@@ -1,8 +1,6 @@
 /* ============================
-   LANDING PAGE - MODERNO
+   RESET
 =============================== */
-
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -11,44 +9,41 @@
 }
 
 body {
-  line-height: 1.6;
+  line-height: 1.7;
   background: #f9f9fb;
-  color: #222;
+  color: #333;
 }
 
-/* Secciones */
+/* ============================
+   SECCIONES
+=============================== */
 .section {
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  text-align: center;
-}
-
-.bg-light {
-  background: #fff;
-  border-radius: 16px;
-  padding: 40px 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  text-align: justify; /* textos justificados */
+  line-height: 1.8;
 }
 
 /* Títulos */
 h2 {
-  color: #371158;
+  color: #1e5039;
   margin-bottom: 25px;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
+  text-align: center;
   position: relative;
 }
 
 h2::after {
   content: "";
   display: block;
-  width: 70px;
+  width: 60px;
   height: 3px;
-  background: #1e5039;
+  background: #371158;
   margin: 12px auto 0;
   border-radius: 2px;
 }
@@ -56,46 +51,49 @@ h2::after {
 /* Párrafos */
 p {
   font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
   color: #444;
-  max-width: 850px;
-  margin: 0 auto;
-  line-height: 1.8;
 }
 
-/* Servicios */
+/* ============================
+   SERVICIOS
+=============================== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
   margin-top: 40px;
 }
 
 .service-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
   padding: 30px 25px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(55, 17, 88, 0.12);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: justify;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(55, 17, 88, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .service-card h3 {
-  color: #1e5039;
+  color: #371158;
   margin-bottom: 12px;
   font-size: 1.3rem;
 }
 
-/* Contacto */
+/* ============================
+   FORMULARIO CONTACTO
+=============================== */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  max-width: 600px;
+  max-width: 650px;
   margin: 40px auto 0;
 }
 
@@ -110,38 +108,40 @@ p {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #371158;
-  box-shadow: 0 0 6px rgba(55, 17, 88, 0.3);
+  border-color: #1e5039;
+  box-shadow: 0 0 6px rgba(30, 80, 57, 0.2);
   outline: none;
 }
 
 .contact-form textarea {
-  min-height: 120px;
+  min-height: 130px;
   resize: vertical;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #371158, #1e5039);
+  background: linear-gradient(135deg, #1e5039, #371158);
   color: white;
   border: none;
-  padding: 14px;
+  padding: 16px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(55, 17, 88, 0.25);
+  box-shadow: 0 8px 20px rgba(55, 17, 88, 0.25);
 }
 
-/* Animaciones secciones */
+/* ============================
+   ANIMACIONES
+=============================== */
 .animate-up {
   opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .animate-up.active {
   opacity: 1;
