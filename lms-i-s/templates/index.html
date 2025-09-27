@@ -15,7 +15,7 @@
     <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
   </head>
   <body>
-    <div id="header"></div>
+    {% include 'includes/header.html' %}
 
     <!-- About -->
     <section id="about" class="about section animate-up">
@@ -86,6 +86,6 @@
       </div>
     </section>
 
-    <div id="footer"></div>
+    {% include 'includes/footer.html' %}
   </body>
 </html>
