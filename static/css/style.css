@@ -222,6 +222,12 @@ p {
   border-top: 3px solid #371158;
 }
 
+.footer,
+.footer p {
+  color: #fff !important; /* fuerza el color blanco */
+  text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .navbar ul {
