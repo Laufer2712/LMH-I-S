@@ -253,48 +253,65 @@ p {
   color: #1b8c68;
 }
 
+/* overlay */
+.overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+  z-index: 1098;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 /* ============================
    NAV RESPONSIVE
 =============================== */
+/* menú lateral móvil (asegúrate que .navbar corresponde a nav) */
 @media (max-width: 768px) {
-  /* Menú oculto al inicio */
-  .navbar {
+  nav.navbar {
     position: fixed;
     top: 0;
     right: -100%;
     width: 80%;
     max-width: 320px;
-    height: 100vh;
+    height: 100%;
     background: #1e5039;
-    transition: right 0.3s ease;
-    z-index: 1100;
     padding: 80px 20px 20px;
+    transition: right 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+    z-index: 1100;
+    overflow-y: auto;
+  }
+  nav.navbar.active {
+    right: 0;
   }
 
-  /* Lista en columna */
   .navbar ul {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .navbar ul li a {
     color: #fff;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
+    font-size: 1.15rem;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Menú visible */
-  .navbar.active {
-    right: 0;
-  }
-
-  /* Mostrar botón hamburguesa */
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 14px;
+    right: 16px;
+    z-index: 1101;
   }
 }
 
