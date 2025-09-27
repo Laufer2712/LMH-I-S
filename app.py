@@ -1,10 +1,15 @@
 from flask import Flask, render_template
+import os
 
-# Creamos la instancia de Flask. 
-# Importante: No es necesario especificar template_folder si está
-# en la raíz junto a app.py. Pero si está anidado, ayuda a Flask a encontrarlo.
-# En este caso, asumimos que templates/ está en la misma carpeta que app.py.
-app = Flask(__name__)
+# Define la ruta absoluta al directorio actual del archivo app.py
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+# Define la ruta absoluta a la carpeta de plantillas (templates/)
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
+# Creamos la instancia de Flask, forzando la ruta al directorio de plantillas.
+# Esto garantiza que Flask encuentre las plantillas sin importar la configuración 
+# de "Root Directory" que Render esté usando internamente.
+app = Flask(__name__, template_folder=TEMPLATE_DIR)
 
 # Función para la página principal (index.html)
 @app.route('/')
