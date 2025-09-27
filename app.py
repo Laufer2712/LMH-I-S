@@ -1,32 +1,30 @@
 from flask import Flask, render_template
 
-# Inicialización de la aplicación Flask
+# Creamos la instancia de Flask. 
+# Importante: No es necesario especificar template_folder si está
+# en la raíz junto a app.py. Pero si está anidado, ayuda a Flask a encontrarlo.
+# En este caso, asumimos que templates/ está en la misma carpeta que app.py.
 app = Flask(__name__)
 
 # Función para la página principal (index.html)
-# Ruta: /
 @app.route('/')
 def index():
-    # Asegúrate de que index.html se encuentra en la carpeta 'templates'
+    # El archivo debe estar en /templates/index.html
     return render_template('index.html')
 
 # Función para la página de servicios (servicios.html)
-# Ruta: /servicios
 @app.route('/servicios')
 def servicios():
-    # Asegúrate de que servicios.html se encuentra en la carpeta 'templates'
+    # El archivo debe estar en /templates/servicios.html
     return render_template('servicios.html')
     
 # Función para la página de contacto (contacto.html)
-# Ruta: /contacto
 @app.route('/contacto')
 def contacto():
-    # Asegúrate de que contacto.html se encuentra en la carpeta 'templates'
+    # El archivo debe estar en /templates/contacto.html
     return render_template('contacto.html')
 
 if __name__ == '__main__':
-    # ----------------------------------------------------------------------
-    # ¡CAMBIO IMPORTANTE! 
-    # 'host='0.0.0.0'' permite conexiones externas, como tu celular.
-    # ----------------------------------------------------------------------
+    # Usamos 0.0.0.0 para escuchar peticiones externas (útil para pruebas en red local)
+    # En Render, Gunicorn maneja el host y el puerto, pero esta configuración es segura.
     app.run(host='0.0.0.0', port=5000, debug=True)
