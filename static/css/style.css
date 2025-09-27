@@ -12,77 +12,13 @@ body {
   line-height: 1.7;
   background: #f9f9fb;
   color: #333;
-  scroll-behavior: smooth;
-}
-
-/* ============================
-   HEADER
-=============================== */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background: #fff;
-  color: #1e5039;
-  position: fixed; /* Fijo siempre arriba */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.main-header .logo a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #1e5039;
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-
-.main-header .logo img.logo-img {
-  height: 42px;
-  width: auto;
-}
-
-/* Navbar */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #1e5039;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.navbar a:hover {
-  background: rgba(30, 80, 57, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Menu toggle para móviles */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
 }
 
 /* ============================
    SECCIONES
 =============================== */
 .section {
-  padding: 120px 20px 80px; /* Ajustado para header fijo */
-  position: relative;
+  padding: 90px 20px;
 }
 
 .container {
@@ -92,22 +28,14 @@ body {
   line-height: 1.8;
 }
 
-/* ============================
-   TITULOS CON DEGRADADO Y PARALAX
-=============================== */
-h2,
-h3 {
+/* Títulos */
+h2 {
+  color: #1e5039;
+  margin-bottom: 25px;
+  font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 25px;
   position: relative;
-  background: linear-gradient(90deg, #1e5039, #371158);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  transform: translateY(0);
-  transition: transform 0.6s ease-out;
 }
 
 h2::after {
@@ -120,23 +48,16 @@ h2::after {
   border-radius: 2px;
 }
 
-/* ============================
-   PARÁGRAFOS
-=============================== */
+/* Párrafos */
 p {
   font-size: 1.1rem;
   max-width: 900px;
   margin: 0 auto 20px auto;
   color: #444;
-  text-align: justify;
-  line-height: 1.8;
-  transform: translateY(0);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-  opacity: 1;
 }
 
 /* ============================
-   SERVICIOS CON EFECTO FLOTANTE
+   SERVICIOS
 =============================== */
 .services-grid {
   display: grid;
@@ -150,17 +71,23 @@ p {
   padding: 30px 25px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: justify;
 }
 
 .service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  color: #371158;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 /* ============================
-   FORMULARIO DE CONTACTO
+   FORMULARIO CONTACTO
 =============================== */
 .contact-form {
   display: flex;
@@ -209,8 +136,82 @@ p {
 }
 
 /* ============================
-   FOOTER
+   ANIMACIONES
 =============================== */
+.animate-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   HEADER & FOOTER
+=============================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #fff;
+  color: #1e5039;
+  position: fixed; /* header fijo */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.main-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.main-header .logo img.logo-img {
+  height: 42px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #1e5039;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(30, 80, 57, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Menu toggle para móviles */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Footer */
 .footer {
   background: #1e5039;
   color: #fff; /* texto blanco */
@@ -221,23 +222,7 @@ p {
   border-top: 3px solid #371158;
 }
 
-/* ============================
-   ANIMACIONES AL SCROLL
-=============================== */
-.animate-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.animate-up.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================
-   RESPONSIVE
-=============================== */
+/* Responsive */
 @media (max-width: 900px) {
   .navbar ul {
     gap: 20px;
