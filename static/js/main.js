@@ -4,7 +4,7 @@ async function loadInclude(id, file) {
         const content = await res.text();
         document.getElementById(id).innerHTML = content;
 
-        if (id === "header") initMenu(); // ✅ solo se llama después de cargar
+        if (id === "header") initMenu(); // solo se llama después de cargar
         if (id === "footer") {
             const yearSpan = document.getElementById("year");
             if (yearSpan) yearSpan.textContent = new Date().getFullYear();
@@ -18,7 +18,7 @@ function initMenu() {
     const toggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
 
-    if (!toggle || !navbar) return; // seguridad
+    if (!toggle || !navbar) return;
 
     toggle.addEventListener("click", () => {
         navbar.classList.toggle("active");
@@ -32,7 +32,14 @@ function initMenu() {
     });
 }
 
-// Solo inicializa scroll y carga includes, no tocar menu aquí
+// Scroll animaciones
+function animateOnScroll() {
+    document.querySelectorAll(".animate-up").forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < window.innerHeight * 0.85) el.classList.add("active");
+    });
+}
+
 window.addEventListener("scroll", animateOnScroll);
 window.addEventListener("load", () => {
     animateOnScroll();

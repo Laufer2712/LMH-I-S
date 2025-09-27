@@ -1,14 +1,22 @@
-<div class="main-header">
+<header class="main-header">
   <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Logo" />
-    <span class="logo-text">LMH I&S</span>
+    <a href="{{ url_for('index') }}">
+      <img
+        src="{{ url_for('static', filename='img/Logo-O.png') }}"
+        alt="LMH I&S Logo"
+        class="logo-img"
+      />
+      <span class="logo-text">LMH I&S</span>
+    </a>
   </div>
-  <div class="menu-toggle">☰</div>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <ul>
-      <li><a href="#about">Quiénes somos</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="{{ url_for('index') }}#about">Quiénes somos</a></li>
+      <li><a href="{{ url_for('index') }}#vision">Visión</a></li>
+      <li><a href="{{ url_for('index') }}#mision">Misión</a></li>
+      <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+      <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
     </ul>
   </nav>
-</div>
+  <div class="menu-toggle">☰</div>
+</header>
