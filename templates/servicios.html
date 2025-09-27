@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios - LMH I&S</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header-footer.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+
+    <section id="services" class="services section animate-up">
+      <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Desarrollo Web</h3>
+            <p>Creamos sitios web profesionales, responsivos y escalables.</p>
+          </div>
+          <div class="service-card">
+            <h3>Consultoría TI</h3>
+            <p>
+              Asesoría estratégica para optimizar tus procesos tecnológicos.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Soluciones a Medida</h3>
+            <p>Software personalizado que resuelve problemas de tu negocio.</p>
+          </div>
+          <div class="service-card">
+            <h3>Mantenimiento y Soporte</h3>
+            <p>
+              Soporte continuo y mantenimiento preventivo para tus sistemas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'includes/footer.html' %}
+  </body>
+</html>

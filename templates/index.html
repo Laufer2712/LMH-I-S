@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMH I&S - Consultora Informática</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header-footer.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+
+    <!-- About -->
+    <section id="about" class="about section animate-up">
+      <div class="container">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          Somos una consultora informática que ayuda a emprendedores visionarios
+          a convertir sus ideas en soluciones tecnológicas sólidas, eficientes y
+          escalables.
+        </p>
+      </div>
+    </section>
+
+    <!-- Visión -->
+    <section id="vision" class="vision section bg-light animate-up">
+      <div class="container">
+        <h2>📍 Visión</h2>
+        <p>Ser el socio tecnológico ideal para emprendedores visionarios...</p>
+      </div>
+    </section>
+
+    <!-- Misión -->
+    <section id="mision" class="mision section animate-up">
+      <div class="container">
+        <h2>📍 Misión</h2>
+        <p>
+          Escuchar las ideas de nuestros clientes y utilizar nuestra
+          experiencia...
+        </p>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services" class="services section bg-light animate-up">
+      <div class="container">
+        <h2>💻 Servicios</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Desarrollo Web</h3>
+            <p>Soluciones a medida para tu presencia digital.</p>
+          </div>
+          <div class="service-card">
+            <h3>Consultoría IT</h3>
+            <p>
+              Asesoría estratégica para optimizar tus procesos tecnológicos.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Soporte Técnico</h3>
+            <p>
+              Mantenimiento y resolución de problemas de manera profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="contact section animate-up">
+      <div class="container">
+        <h2>📩 Contáctanos</h2>
+        <form name="contacto-LMH" class="contact-form">
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu correo" required />
+          <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+          <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
